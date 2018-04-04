@@ -1,0 +1,185 @@
+-- ----------------------------
+-- Table structure for subject
+-- ----------------------------
+DROP TABLE IF EXISTS `subject`;
+CREATE TABLE `subject` (
+  `subject_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `subject_code` varchar(4) NOT NULL,
+  `subject_name` varchar(32) NOT NULL,
+  `subject_cn_name` varchar(16) DEFAULT NULL,
+  `subject_type` tinyint(4) NOT NULL,
+  `subject_level` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`subject_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of subject
+-- ----------------------------
+INSERT INTO `subject` VALUES ('1', '0812', 'Computer', null, '3', '0');
+INSERT INTO `subject` VALUES ('2', '0809', 'Electronics', null, '3', '0');
+INSERT INTO `subject` VALUES ('3', '0701', 'Mathematics', null, '2', '0');
+INSERT INTO `subject` VALUES ('4', '0702', 'Physics', null, '2', '0');
+INSERT INTO `subject` VALUES ('5', '0201', 'Economics', null, '1', '0');
+INSERT INTO `subject` VALUES ('6', '1201', 'Management', null, '1', '0');
+INSERT INTO `subject` VALUES ('7', '0202', 'Finance', null, '1', '1');
+INSERT INTO `subject` VALUES ('8', '1202', 'Accounting', null, '1', '1');
+INSERT INTO `subject` VALUES ('9', '0501', 'Literature', null, '1', '2');
+INSERT INTO `subject` VALUES ('10', '0401', 'Education', null, '1', '2');
+INSERT INTO `subject` VALUES ('11', '0301', 'Law', null, '1', '2');
+INSERT INTO `subject` VALUES ('12', '0303', 'Sociology', null, '1', '2');
+INSERT INTO `subject` VALUES ('13', '0703', 'Chemistry', null, '2', '1');
+INSERT INTO `subject` VALUES ('14', '1002', 'Medicine', null, '2', '1');
+INSERT INTO `subject` VALUES ('15', '0710', 'Biology', null, '2', '2');
+INSERT INTO `subject` VALUES ('16', '0705', 'Geography', null, '2', '2');
+INSERT INTO `subject` VALUES ('17', '0714', 'Statistics', null, '2', '2');
+INSERT INTO `subject` VALUES ('18', '0830', 'Environment', null, '2', '2');
+INSERT INTO `subject` VALUES ('19', '0810', 'Communication Engineering', null, '3', '1');
+INSERT INTO `subject` VALUES ('20', '0814', 'Civil  Engineering', null, '3', '1');
+INSERT INTO `subject` VALUES ('21', '0802', 'Mechanical Engineering', null, '3', '2');
+INSERT INTO `subject` VALUES ('22', '0817', '\n\nChemical  Engineering\n', null, '3', '2');
+INSERT INTO `subject` VALUES ('23', '0805', 'Material Engineering', null, '3', '2');
+INSERT INTO `subject` VALUES ('24', '0807', 'Power Engineering', null, '3', '2');
+
+-- ----------------------------
+-- Table structure for university
+-- ----------------------------
+DROP TABLE IF EXISTS `university`;
+CREATE TABLE `university` (
+  `university_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `university_code` char(4) NOT NULL,
+  `university_name` varchar(64) NOT NULL,
+  `university_cn_name` varchar(32) DEFAULT NULL,
+  `university_name_abbr` varchar(8) DEFAULT NULL,
+  `university_type` tinyint(4) DEFAULT NULL,
+  `university_level` smallint(6) DEFAULT NULL,
+  `university_location` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`university_id`),
+  UNIQUE KEY `idx_university_code` (`university_code`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of university
+-- ----------------------------
+INSERT INTO `university` VALUES ('1', '1001', 'Tsinghua University', null, 'THU', '3', '1', '11');
+INSERT INTO `university` VALUES ('2', '1002', 'Peking University', null, 'PKU', '1', '1', '11');
+INSERT INTO `university` VALUES ('3', '1003', 'Fudan University', null, 'FDU', '1', '2', '31');
+INSERT INTO `university` VALUES ('4', '1004', 'Shanghai Jiaotong University', null, 'SJTU', '3', '2', '31');
+INSERT INTO `university` VALUES ('5', '1005', 'University of Science and Technology of China', null, 'USTC', '2', '2', '34');
+INSERT INTO `university` VALUES ('6', '1006', 'Renmin University of China', null, 'RUC', '1', '2', '11');
+INSERT INTO `university` VALUES ('7', '1007', 'Zhejiang University', null, 'ZJU', '3', '2', '33');
+INSERT INTO `university` VALUES ('8', '1008', 'Nanjing University', null, 'NJU', '2', '2', '32');
+INSERT INTO `university` VALUES ('9', '1009', 'Beihang University', null, 'BUAA', '3', '3', '11');
+INSERT INTO `university` VALUES ('10', '1010', 'Tongji University', null, 'TONGJI', '3', '3', '31');
+INSERT INTO `university` VALUES ('11', '1011', 'Nankai University', null, 'NKU', '2', '3', '12');
+INSERT INTO `university` VALUES ('12', '1012', 'Xian Jiaotong University', null, 'XJTU', '2', '3', '61');
+INSERT INTO `university` VALUES ('13', '1013', 'Harbin Institute of Technology', null, 'HIT', '3', '3', '23');
+INSERT INTO `university` VALUES ('14', '1014', 'Beijing Normal University', null, 'BNU', '1', '3', '11');
+INSERT INTO `university` VALUES ('15', '1015', 'Sun Yat-sen University', null, 'SYSU', '2', '3', '44');
+INSERT INTO `university` VALUES ('16', '1016', 'Wuhan University', null, 'WHU', '2', '3', '42');
+INSERT INTO `university` VALUES ('17', '1017', 'Huazhong University of Science and Technology', null, 'HUST', '2', '3', '42');
+INSERT INTO `university` VALUES ('18', '1018', 'Tianjin University', null, 'TJU', '3', '3', '12');
+INSERT INTO `university` VALUES ('19', '1019', 'Xiamen University', null, 'XMU', '1', '3', '35');
+INSERT INTO `university` VALUES ('20', '1020', 'Southeast University', null, 'SEU', '2', '3', '32');
+INSERT INTO `university` VALUES ('21', '1021', 'Beijing Institute of Technology', null, 'BIT', '3', '3', '11');
+INSERT INTO `university` VALUES ('22', '1101', 'Central University of Finance and Economics', null, 'CUFE', '1', '3', '11');
+INSERT INTO `university` VALUES ('23', '1102', 'Shanghai University of Finance and Economics', null, 'SUFE', '1', '3', '31');
+INSERT INTO `university` VALUES ('24', '1103', 'University of International Business and Economics', null, 'UIBE', '1', '3', '11');
+INSERT INTO `university` VALUES ('25', '1104', 'Beijng University of Posts and Telecommunications', null, 'BUPT', '3', '3', '11');
+INSERT INTO `university` VALUES ('26', '1105', 'China Unverisity of Political Science and Law', null, 'CUPL', '1', '3', '11');
+INSERT INTO `university` VALUES ('27', '1022', 'East China Normal Unversity', null, 'ECNU', '1', '4', '31');
+INSERT INTO `university` VALUES ('28', '1023', 'Shandong Unversity', null, 'SDU', '1', '4', '37');
+INSERT INTO `university` VALUES ('29', '1024', 'Northwastern Polytechnical University', null, 'NWPU', '3', '4', '61');
+INSERT INTO `university` VALUES ('30', '1025', 'Dalian University of Technology', null, 'DLUT', '2', '4', '21');
+INSERT INTO `university` VALUES ('31', '1026', 'China Agricultural University', null, 'CAU', '2', '4', '11');
+INSERT INTO `university` VALUES ('32', '1027', 'Central South University', null, 'CSU', '2', '4', '43');
+INSERT INTO `university` VALUES ('33', '1028', 'South China University of Technology', null, 'SCUT', '3', '4', '44');
+INSERT INTO `university` VALUES ('34', '1029', 'Sichuan University', null, 'SCU', '1', '4', '51');
+INSERT INTO `university` VALUES ('35', '1030', 'Jilin University', null, 'JLU', '1', '4', '22');
+INSERT INTO `university` VALUES ('36', '1031', 'Hunan University', null, 'HNU', '1', '4', '43');
+INSERT INTO `university` VALUES ('37', '1032', 'University of Electronic Science and Technology of China', null, 'UETC', '3', '4', '51');
+INSERT INTO `university` VALUES ('38', '1033', 'Chongqing University', null, 'CQU', '2', '4', '50');
+INSERT INTO `university` VALUES ('39', '1034', 'Ocean University of China', null, 'OUC', '2', '4', '37');
+INSERT INTO `university` VALUES ('40', '1035', 'Northeastern University', null, 'NEU', '3', '4', '21');
+INSERT INTO `university` VALUES ('41', '1106', 'Southwastern University of Finance and Economics', null, 'SWUFE', '1', '4', '51');
+INSERT INTO `university` VALUES ('42', '1107', 'Beijing Jiaotong University', null, 'BJTU', '2', '4', '11');
+INSERT INTO `university` VALUES ('43', '1108', 'Zhongnan University of Economics and Law', null, 'ZUEL', '1', '4', '42');
+INSERT INTO `university` VALUES ('44', '1109', 'Nanjing University of Aeronautics and Astronautics', null, 'NUAA', '3', '4', '32');
+INSERT INTO `university` VALUES ('45', '1110', 'University of Science and Technoloy Beijing', null, 'USTB', '3', '4', '11');
+INSERT INTO `university` VALUES ('46', '1111', 'North China Electric Power University', null, 'NCEPU', '3', '4', '11');
+INSERT INTO `university` VALUES ('47', '1112', 'Xidian University', null, 'XDU', '3', '4', '61');
+INSERT INTO `university` VALUES ('48', '1113', 'East China University of Science and Technology', null, 'ECUST', '2', '4', '31');
+INSERT INTO `university` VALUES ('49', '1114', 'Nanjing University of Science and Technology', null, 'NJUST', '2', '4', '32');
+INSERT INTO `university` VALUES ('50', '1115', 'Communication University of China', null, 'CUC', '1', '4', '11');
+INSERT INTO `university` VALUES ('51', '1036', 'Minzu University of China', null, 'MUC', null, '5', '11');
+INSERT INTO `university` VALUES ('52', '1037', 'Lanzhou University', null, 'LZU', null, '5', '62');
+INSERT INTO `university` VALUES ('53', '1116', 'Jinan University', null, 'JNU', null, '5', '44');
+INSERT INTO `university` VALUES ('54', '1117', 'Beijng University of Technology', null, 'BJUT', null, '5', '11');
+INSERT INTO `university` VALUES ('55', '1118', 'Shanghai University', null, 'SHU', null, '5', '31');
+INSERT INTO `university` VALUES ('56', '1119', 'Beijing University of Chemical Technology', null, 'BUCT', null, '5', '11');
+INSERT INTO `university` VALUES ('57', '1120', 'Southwest Jiaotong University', null, 'SWJTU', null, '5', '51');
+INSERT INTO `university` VALUES ('58', '1121', 'Soochow University', null, 'SZU', null, '5', '32');
+INSERT INTO `university` VALUES ('59', '1122', 'Huazhong Normal University', null, 'HZNU', null, '5', '42');
+INSERT INTO `university` VALUES ('60', '1123', 'Beijing Forestry University', null, 'BFU', null, '5', '11');
+INSERT INTO `university` VALUES ('61', '1124', 'Wuhan University of Technology', null, 'WHUT', null, '5', '42');
+INSERT INTO `university` VALUES ('62', '1125', 'Harbin Engineering University', null, 'HEU', null, '5', '23');
+INSERT INTO `university` VALUES ('63', '1126', 'Donghua University', null, 'DHU', null, '5', '31');
+INSERT INTO `university` VALUES ('64', '1127', 'Hohai University', null, 'HHU', null, '5', '32');
+INSERT INTO `university` VALUES ('65', '1128', 'China University of Geosciences', null, 'CUG', null, '5', '11');
+INSERT INTO `university` VALUES ('66', '1129', 'China University of Petroleum', null, 'CUP', null, '5', '11');
+INSERT INTO `university` VALUES ('67', '1130', 'Changan University', null, 'CHANGAN', null, '5', '61');
+INSERT INTO `university` VALUES ('68', '1131', 'Dalian Maritime University', null, 'DLMU', null, '5', '21');
+INSERT INTO `university` VALUES ('69', '1132', 'Hefei University of Technology', null, 'HFUT', null, '5', '34');
+INSERT INTO `university` VALUES ('70', '1133', 'Jiangnan University', null, 'JIANGNAN', null, '5', '32');
+INSERT INTO `university` VALUES ('71', '1134', 'Northwest University', null, 'NWU', null, '5', '61');
+INSERT INTO `university` VALUES ('72', '1135', 'China University of Mining and Technology', null, 'CUMT', null, '5', '11');
+INSERT INTO `university` VALUES ('73', '1136', 'Fuzhou University', null, 'FZU', null, '5', '35');
+INSERT INTO `university` VALUES ('74', '1137', 'Hebei University of Technology', null, 'HBUT', null, '5', '13');
+INSERT INTO `university` VALUES ('75', '2001', 'Northeast University of Finance and Economics', null, 'NEUFE', null, '5', '21');
+INSERT INTO `university` VALUES ('76', '2002', 'Capital University of Economics and Business', null, 'CUEB', null, '5', '11');
+INSERT INTO `university` VALUES ('77', '2003', 'Tianjin University of Finance and Economics', null, 'TJUFE', null, '5', '12');
+INSERT INTO `university` VALUES ('78', '2004', 'Nanjing University of Posts and Telecommunications', null, 'NUPT', null, '5', '32');
+INSERT INTO `university` VALUES ('79', '2005', 'East China University of Political Science and Law', null, 'ECUPL', null, '5', '31');
+INSERT INTO `university` VALUES ('80', '2006', 'Beijing Technology and Business University', null, 'BTBU', null, '5', '11');
+
+-- ----------------------------
+-- Table structure for rank
+-- ----------------------------
+DROP TABLE IF EXISTS `rank`;
+CREATE TABLE `rank` (
+  `rank_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `rank_category` tinyint(4) NOT NULL,
+  `rank_level` smallint(8) NOT NULL,
+  `university_code` int(20) DEFAULT NULL,
+  PRIMARY KEY (`rank_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of rank
+-- ----------------------------
+INSERT INTO `rank` VALUES ('1', '1', '1', '1002');
+INSERT INTO `rank` VALUES ('2', '2', '1', '1001');
+INSERT INTO `rank` VALUES ('3', '3', '1', '1001');
+INSERT INTO `rank` VALUES ('4', '1', '2', '1003');
+INSERT INTO `rank` VALUES ('5', '1', '2', '1006');
+INSERT INTO `rank` VALUES ('6', '2', '2', '1005');
+INSERT INTO `rank` VALUES ('7', '2', '2', '1008');
+INSERT INTO `rank` VALUES ('8', '3', '2', '1004');
+INSERT INTO `rank` VALUES ('9', '3', '2', '1007');
+INSERT INTO `rank` VALUES ('10', '1', '3', '1101');
+INSERT INTO `rank` VALUES ('11', '1', '3', '1102');
+INSERT INTO `rank` VALUES ('12', '2', '3', '1011');
+INSERT INTO `rank` VALUES ('13', '2', '3', '1012');
+INSERT INTO `rank` VALUES ('14', '3', '3', '1009');
+INSERT INTO `rank` VALUES ('15', '3', '3', '1010');
+INSERT INTO `rank` VALUES ('16', '1', '4', '1015');
+INSERT INTO `rank` VALUES ('17', '1', '4', '1018');
+INSERT INTO `rank` VALUES ('18', '1', '4', '1103');
+INSERT INTO `rank` VALUES ('19', '1', '4', '1105');
+INSERT INTO `rank` VALUES ('20', '2', '4', '1014');
+INSERT INTO `rank` VALUES ('21', '2', '4', '1016');
+INSERT INTO `rank` VALUES ('22', '2', '4', '1017');
+INSERT INTO `rank` VALUES ('23', '2', '4', '1020');
+INSERT INTO `rank` VALUES ('24', '3', '4', '1013');
+INSERT INTO `rank` VALUES ('25', '3', '4', '1019');
+INSERT INTO `rank` VALUES ('26', '3', '4', '1021');
+INSERT INTO `rank` VALUES ('27', '3', '4', '1104');
