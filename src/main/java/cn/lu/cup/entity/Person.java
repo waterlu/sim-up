@@ -1,17 +1,11 @@
 package cn.lu.cup.entity;
 
 import cn.lu.cup.common.util.RandomUtil;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * @author lutiehua
  * @date 2018/4/3
  */
-@Getter
-@Setter
-@ToString
 public class Person {
 
     private Integer health;
@@ -97,4 +91,141 @@ public class Person {
         return RandomUtil.getRandomNum(min, max);
     }
 
+    public Integer getHealth() {
+        return health;
+    }
+
+    public void setHealth(Integer health) {
+        this.health = health;
+    }
+
+    public Integer getLeader() {
+        return leader;
+    }
+
+    public void setLeader(Integer leader) {
+        this.leader = leader;
+    }
+
+    public Integer getMq() {
+        return mq;
+    }
+
+    public void setMq(Integer mq) {
+        this.mq = mq;
+    }
+
+    public Integer getIq() {
+        return iq;
+    }
+
+    public void setIq(Integer iq) {
+        this.iq = iq;
+    }
+
+    public Integer getEq() {
+        return eq;
+    }
+
+    public void setEq(Integer eq) {
+        this.eq = eq;
+    }
+
+    public Integer getArt() {
+        return art;
+    }
+
+    public void setArt(Integer art) {
+        this.art = art;
+    }
+
+    public Integer getLogic() {
+        return logic;
+    }
+
+    public void setLogic(Integer logic) {
+        this.logic = logic;
+    }
+
+    public Integer getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Integer language) {
+        this.language = language;
+    }
+
+    public Integer getTheory() {
+        return theory;
+    }
+
+    public void setTheory(Integer theory) {
+        this.theory = theory;
+    }
+
+    public Integer getPractice() {
+        return practice;
+    }
+
+    public void setPractice(Integer practice) {
+        this.practice = practice;
+    }
+
+    public Integer getImagination() {
+        return imagination;
+    }
+
+    public void setImagination(Integer imagination) {
+        this.imagination = imagination;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+    public Integer getScore1() {
+        return score1;
+    }
+
+    public void setScore1(Integer score1) {
+        this.score1 = score1;
+    }
+
+    public Integer getScore2() {
+        return score2;
+    }
+
+    public void setScore2(Integer score2) {
+        this.score2 = score2;
+    }
+
+    public Integer getScore3() {
+        return score3;
+    }
+
+    public void setScore3(Integer score3) {
+        this.score3 = score3;
+    }
+
+    public Integer getScore4() {
+        return score4;
+    }
+
+    public void setScore4(Integer score4) {
+        this.score4 = score4;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "health=" + health +
+                ", mq=" + mq +
+                ", iq=" + iq +
+                ", score=" + score +
+                '}';
+    }
 }

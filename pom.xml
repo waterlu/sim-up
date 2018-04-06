@@ -57,33 +57,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- common-web -->
-        <dependency>
-            <groupId>cn.zjhf.kingold.cloud.common</groupId>
-            <artifactId>common-web</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
 
-        <!-- common-tool -->
-        <dependency>
-            <groupId>cn.zjhf.kingold.cloud.common</groupId>
-            <artifactId>common-tool</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- common-mybatis -->
-        <dependency>
-            <groupId>cn.zjhf.kingold.cloud.common</groupId>
-            <artifactId>common-mybatis</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- project-generator -->
-        <dependency>
-            <groupId>cn.zjhf.tool.quicker</groupId>
-            <artifactId>spring-cloud-project-generator</artifactId>
-            <version>0.2.0-SNAPSHOT</version>
-        </dependency>
 
     </dependencies>
 
