@@ -48,7 +48,6 @@
 //     * @throws BusinessException
 //     */
 //    @PostMapping(value = "")
-//    @ApiOperation(value = "创建接口", response = RankVO.class)
 //    public ResponseResult<RankVO> create(@RequestBody @ApiParam @Validated({InsertGroup.class}) RankDTO param) throws BusinessException {
 //        // RankDTO 用来接收请求参数
 //        String jsonString = JSON.toJSONString(param);
@@ -76,7 +75,6 @@
 //     * @throws BusinessException
 //     */
 //    @GetMapping("/query")
-//    @ApiOperation(value = "查询接口", response = RankVO.class, notes = "list")
 //    public ResponseResult<ListResultVO<RankVO>> query(@ApiParam @Validated RankQueryDTO queryParam) throws BusinessException {
 //        // 由于需要处理PageInfo，所以直接在Service中处理返回结果
 //        return rankService.query(queryParam);
@@ -89,7 +87,6 @@
 //     * @throws BusinessException
 //     */
 //    @GetMapping(value = "/{id}")
-//    @ApiOperation(value = "获取详情接口", response = RankVO.class)
 //    public ResponseResult<RankVO> get(@PathVariable Long id) throws BusinessException {
 //        // Service层返回的是与数据库表对应的实体类对象
 //        Rank rank = rankService.get(id);
@@ -111,7 +108,6 @@
 //     * @throws BusinessException
 //     */
 //    @PutMapping(value = "/{id}")
-//    @ApiOperation(value = "更新接口")
 //    public SimpleResponseResult update(@PathVariable Long id, @RequestBody @ApiParam @Validated({UpdateGroup.class}) RankDTO param) throws BusinessException {
 //        // RankDTO 用来接收请求参数
 //        String jsonString = JSON.toJSONString(param);
@@ -135,7 +131,6 @@
 //     * @throws BusinessException
 //     */
 //    @DeleteMapping(value = "/{id}")
-//    @ApiOperation(value = "删除接口")
 //    public SimpleResponseResult delete(@PathVariable Long id) throws BusinessException {
 //        // 此处根据实际情况判断row=0是否需要抛出异常
 //        int row = rankService.delete(id);

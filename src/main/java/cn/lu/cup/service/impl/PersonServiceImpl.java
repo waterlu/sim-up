@@ -48,13 +48,16 @@ public class PersonServiceImpl implements PersonService {
         person.setLanguage(RandomUtil.getRandomNum(0, 20));
 
         // [0, 40)    0
-        person.setTheory(RandomUtil.getRandomNum(0, 40));
+        person.setBusiness(RandomUtil.getRandomNum(0, 40));
 
         // [0, 40)    0
-        person.setPractice(RandomUtil.getRandomNum(0, 40));
+        person.setLiterature(RandomUtil.getRandomNum(0, 40));
 
         // [0, 40)    0
-        person.setImagination(RandomUtil.getRandomNum(0, 40));
+        person.setScience(RandomUtil.getRandomNum(0, 40));
+
+        // [0, 40)    0
+        person.setEngineer(RandomUtil.getRandomNum(0, 40));
 
         return person;
     }

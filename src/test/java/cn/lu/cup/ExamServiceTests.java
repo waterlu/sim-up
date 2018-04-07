@@ -30,22 +30,23 @@ public class ExamServiceTests {
         List<Person> personList = new ArrayList<>();
         for (int i=0; i<50000; i++) {
             Person person = personService.createRandom();
+            person.setName(String.format("T%05d", i + 1));
             person.exam();
             personList.add(person);
         }
 
         personList.sort((Person p1, Person p2) -> p2.getScore() - p1.getScore());
 
-        int count = 0;
-        for (Person person : personList) {
-            count++;
-            for (int j=0; j<coff.length; j++) {
-                if (count == coff[j]) {
-                    System.out.println("" + count + "\t" + person);
-                    break;
-                }
-            }
-        }
+//        int count = 0;
+//        for (Person person : personList) {
+//            count++;
+//            for (int j=0; j<coff.length; j++) {
+//                if (count == coff[j]) {
+//                    System.out.println("" + count + "\t" + person);
+//                    break;
+//                }
+//            }
+//        }
     }
 
     //  36659

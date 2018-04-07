@@ -2,11 +2,16 @@ package cn.lu.cup.entity;
 
 import cn.lu.cup.common.util.RandomUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author lutiehua
  * @date 2018/4/3
  */
 public class Person {
+
+    private String name;
 
     private Integer health;
 
@@ -18,18 +23,40 @@ public class Person {
 
     private Integer eq;
 
+    /**
+     * 语
+     */
     private Integer art;
 
+    /**
+     * 数
+     */
     private Integer logic;
 
+    /**
+     * 外
+     */
     private Integer language;
 
-    private Integer theory;
+    /**
+     * 商
+     */
+    private Integer business;
 
-    private Integer practice;
+    /**
+     * 文
+     */
+    private Integer literature;
 
-    private Integer imagination;
+    /**
+     * 理
+     */
+    private Integer science;
 
+    /**
+     * 工
+     */
+    private Integer engineer;
 
     private Integer score;
 
@@ -40,6 +67,11 @@ public class Person {
     private Integer score3;
 
     private Integer score4;
+
+    /**
+     *
+     */
+    private Integer category;
 
     public void exam() {
         // art
@@ -52,21 +84,31 @@ public class Person {
         score3 = exam1(language);
 
         // theory
-        score4 = exam2(theory);
+        int temp[] = new int[4];
+        temp[0] = exam2(business);
+        temp[1] = exam2(literature);
+        temp[2] = exam2(science);
+        temp[3] = exam2(engineer);
 
-        // practice
-        int temp = exam2(practice);
-        if (temp > score4) {
-            score4 = temp;
+        int max = 0;
+        for (int i=0; i<temp.length; i++) {
+            int value = temp[i] / 10;
+            if (value > max) {
+                max = value;
+                category = i;
+            } else if (value == max) {
+                int replace = RandomUtil.getRandomNum(0, 2);
+                if (replace > 0) {
+                    max = value;
+                    category = i;
+                }
+            }
         }
 
-        // imagination
-        temp = exam2(imagination);
-        if (temp > score4) {
-            score4 = temp;
-        }
+        score4 = temp[category];
+        category = category + 1;
 
-        score = score1 + score2 + score3 +score4;
+        score = score1 + score2 + score3 + score4;
     }
 
     public int exam1(int subject) {
@@ -89,6 +131,14 @@ public class Person {
         }
         min = max * mq / 100;
         return RandomUtil.getRandomNum(min, max);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getHealth() {
@@ -155,30 +205,6 @@ public class Person {
         this.language = language;
     }
 
-    public Integer getTheory() {
-        return theory;
-    }
-
-    public void setTheory(Integer theory) {
-        this.theory = theory;
-    }
-
-    public Integer getPractice() {
-        return practice;
-    }
-
-    public void setPractice(Integer practice) {
-        this.practice = practice;
-    }
-
-    public Integer getImagination() {
-        return imagination;
-    }
-
-    public void setImagination(Integer imagination) {
-        this.imagination = imagination;
-    }
-
     public Integer getScore() {
         return score;
     }
@@ -217,6 +243,38 @@ public class Person {
 
     public void setScore4(Integer score4) {
         this.score4 = score4;
+    }
+
+    public Integer getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(Integer business) {
+        this.business = business;
+    }
+
+    public Integer getLiterature() {
+        return literature;
+    }
+
+    public void setLiterature(Integer literature) {
+        this.literature = literature;
+    }
+
+    public Integer getScience() {
+        return science;
+    }
+
+    public void setScience(Integer science) {
+        this.science = science;
+    }
+
+    public Integer getEngineer() {
+        return engineer;
+    }
+
+    public void setEngineer(Integer engineer) {
+        this.engineer = engineer;
     }
 
     @Override
