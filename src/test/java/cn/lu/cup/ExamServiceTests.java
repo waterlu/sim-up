@@ -25,10 +25,10 @@ public class ExamServiceTests {
     @Test
     public void enterTest() {
 
-        int coff[] = new int[] {40, 250, 2000, 5000, 10000, 15000, 20000};
+        int coff[] = new int[] {80, 320, 960, 1920, 3360, 5280, 7200};
 
         List<Person> personList = new ArrayList<>();
-        for (int i=0; i<100000; i++) {
+        for (int i=0; i<50000; i++) {
             Person person = personService.createRandom();
             person.exam();
             personList.add(person);
