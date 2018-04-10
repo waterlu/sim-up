@@ -1,6 +1,6 @@
 package cn.lu.cup.entity;
 
-import cn.lu.common.util.RandomUtil;
+import cn.lu.common.util.RandUtil;
 
 /**
  * @author lutiehua
@@ -94,7 +94,7 @@ public class Person {
                 max = value;
                 category = i;
             } else if (value == max) {
-                int replace = RandomUtil.getRandomNum(0, 2);
+                int replace = RandUtil.getRandomNum(0, 2);
                 if (replace > 0) {
                     max = value;
                     category = i;
@@ -116,7 +116,7 @@ public class Person {
             max = 150;
         }
         min = max * mq / 100;
-        return RandomUtil.getRandomNum(min, max);
+        return RandUtil.getRandomNum(min, max);
     }
 
     public int exam2(int subject) {
@@ -127,7 +127,7 @@ public class Person {
             max = 300;
         }
         min = max * mq / 100;
-        return RandomUtil.getRandomNum(min, max);
+        return RandUtil.getRandomNum(min, max);
     }
 
     public String getName() {

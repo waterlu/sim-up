@@ -1,6 +1,6 @@
 package cn.lu.common.exception;
 
-import cn.zjhf.kingold.cloud.common.web.ResponseCode;
+import cn.lu.common.web.ResponseCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

@@ -1,7 +1,7 @@
 package cn.lu.common.exception;
 
-import cn.zjhf.kingold.cloud.common.web.ResponseCode;
-import cn.zjhf.kingold.cloud.common.web.ResponseResult;
+import cn.lu.common.web.ResponseCode;
+import cn.lu.common.web.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;

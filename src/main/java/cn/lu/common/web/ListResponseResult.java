@@ -1,6 +1,7 @@
 package cn.lu.common.web;
 
-import cn.zjhf.kingold.cloud.common.vo.ListResultVO;
+
+import cn.lu.common.vo.ListResultVO;
 
 /**
  * 返回结果data是对象列表

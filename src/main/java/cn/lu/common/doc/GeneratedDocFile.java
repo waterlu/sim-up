@@ -1,11 +1,11 @@
 package cn.lu.common.doc;
 
-import cn.zjhf.kingold.cloud.common.doc.model.DataModel;
-import cn.zjhf.kingold.cloud.common.doc.model.InterfaceModel;
-import cn.zjhf.kingold.cloud.common.doc.model.RequestModel;
-import cn.zjhf.kingold.cloud.common.doc.model.ResponseModel;
-import cn.zjhf.kingold.cloud.common.vo.ListResultVO;
-import cn.zjhf.kingold.cloud.common.web.ResponseResult;
+import cn.lu.common.doc.model.DataModel;
+import cn.lu.common.doc.model.InterfaceModel;
+import cn.lu.common.doc.model.RequestModel;
+import cn.lu.common.doc.model.ResponseModel;
+import cn.lu.common.vo.ListResultVO;
+import cn.lu.common.web.ResponseResult;
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;

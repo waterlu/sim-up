@@ -1,7 +1,6 @@
 package cn.lu.common.validation;
 
-import cn.zjhf.kingold.cloud.common.exception.BusinessException;
-import cn.zjhf.kingold.cloud.common.exception.ParamException;
+import cn.lu.common.exception.ParamException;
 import com.alibaba.fastjson.JSON;
 
 import javax.validation.ConstraintViolation;
@@ -27,7 +26,7 @@ public class ParamTool {
      * @param className 对应的DTO类名
      * @param <T>
      * @return
-     * @throws BusinessException
+     * @throws ParamException
      */
     public static <T> T map2Object(Map<String, Object> param, Class<T> className) throws ParamException {
         // 先转为JSON串，再转为对象

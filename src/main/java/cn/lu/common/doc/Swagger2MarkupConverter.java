@@ -1,6 +1,6 @@
 package cn.lu.common.doc;
 
-import cn.zjhf.kingold.cloud.common.doc.model.DataModel;
+import cn.lu.common.doc.model.DataModel;
 import io.swagger.models.Model;
 import io.swagger.models.Swagger;
 import io.swagger.models.properties.Property;
