@@ -21,6 +21,8 @@ import cn.lu.cup.dto.UniversitySubjectLevelQueryDTO;
 import cn.lu.cup.dto.UniversitySubjectLevelDTO;
 import cn.lu.cup.service.UniversitySubjectLevelService;
 import cn.lu.cup.vo.UniversitySubjectLevelVO;
+import cn.lu.cup.mapper.UniversitySubjectLevelMapper;
+import cn.lu.cup.entity.UniversitySubjectLevel;
 
 /**
  * 服务实现类
@@ -96,6 +98,7 @@ public class UniversitySubjectLevelServiceImpl implements UniversitySubjectLevel
 
                     UniversitySubjectLevel usLevel = new UniversitySubjectLevel();
                     usLevel.setCategory(category);
+                    usLevel.setLevel(level);
                     usLevel.setUniversityCode(universityCode);
                     usLevel.setSubjectCode(subjectCode);
                     usLevel.setNumber(number);

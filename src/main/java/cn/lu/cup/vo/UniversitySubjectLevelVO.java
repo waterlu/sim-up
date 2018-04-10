@@ -39,6 +39,13 @@ public class UniversitySubjectLevelVO extends ResultVO {
      *
      */
     @ApiModelProperty(value = "", required = false)
+    private Integer level;
+
+    /**
+     * 
+     *
+     */
+    @ApiModelProperty(value = "", required = false)
     private String universityCode;
 
     /**

@@ -15,6 +15,9 @@ public class UniversitySubjectLevel {
     @Column(name = "category")
     private Integer category;
 
+    @Column(name = "level")
+    private Integer level;
+
     @Column(name = "university_code")
     private String universityCode;
 
@@ -57,6 +60,20 @@ public class UniversitySubjectLevel {
      */
     public void setCategory(Integer category) {
         this.category = category;
+    }
+
+    /**
+     * @return level
+     */
+    public Integer getLevel() {
+        return level;
+    }
+
+    /**
+     * @param level
+     */
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     /**

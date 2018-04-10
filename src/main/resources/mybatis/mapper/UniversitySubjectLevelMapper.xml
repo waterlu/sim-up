@@ -7,6 +7,7 @@
     -->
     <id column="university_subject_level_id" jdbcType="BIGINT" property="universitySubjectLevelId" />
     <result column="category" jdbcType="SMALLINT" property="category" />
+    <result column="level" jdbcType="SMALLINT" property="level" />
     <result column="university_code" jdbcType="VARCHAR" property="universityCode" />
     <result column="subject_code" jdbcType="VARCHAR" property="subjectCode" />
     <result column="number" jdbcType="SMALLINT" property="number" />

@@ -39,8 +39,8 @@
 	"tables":[
 		{
 			"type":"Single",
-			"name":"subject_level",
-			"key":"subject_level_id",
+			"name":"university_subject_level",
+			"key":"university_subject_level_id",
 			"keyType":"ID",
 			"remark":""
 		}

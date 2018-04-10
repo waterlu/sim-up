@@ -37,6 +37,13 @@ public class UniversitySubjectLevelDTO extends ParamDTO {
      * 
      *
      */
+    @ApiModelProperty(value = "", required = false)
+    private Integer level;
+
+    /**
+     * 
+     *
+     */
     @NotBlank(groups = {InsertGroup.class})
     @Size(max = 5)
     @ApiModelProperty(value = "", required = false)
