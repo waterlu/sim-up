@@ -1,12 +1,12 @@
 ###############################
 # 切换环境
 ###############################
-spring.profiles.active=local
+spring.profiles.active=dev
 
 ###############################
 # 服务端口
 ###############################
-server.port=8010
+server.port=${servicePort?c}
 
 ###############################
 # 日志配置
@@ -18,7 +18,7 @@ logging.config=classpath:log4j2.xml
 ###############################
 #mybatis.config-location=classpath:mybatis/mybatis-config.xml
 mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
-mybatis.type-aliases-package=cn.lu.cup.entity
+mybatis.type-aliases-package=${entityPackage}
 
 ###############################
 # 通用mapper3配置
@@ -30,7 +30,7 @@ mapper.identity=MYSQL
 mapper.before=true
 
 # 非常重要，自定义的mapper基类需要在这里声明，提前进行初始化，否则构造SQLProvider时会抛异常
-mapper.mappers=cn.lu.common.mybatis.SingleTableMapper
+mapper.mappers=cn.zjhf.kingold.cloud.common.mapper.SingleTableMapper,cn.zjhf.kingold.cloud.common.mapper.InsertUuidListMapper
 
 ###############################
 # 分页配置

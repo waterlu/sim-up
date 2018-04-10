@@ -6,8 +6,15 @@
       WARNING - @mbg.generated
     -->
     <id column="university_id" jdbcType="BIGINT" property="universityId" />
-    <result column="university_code" jdbcType="CHAR" property="universityCode" />
+    <result column="university_code" jdbcType="VARCHAR" property="universityCode" />
     <result column="university_name" jdbcType="VARCHAR" property="universityName" />
+    <result column="university_cn_name" jdbcType="VARCHAR" property="universityCnName" />
     <result column="university_name_abbr" jdbcType="VARCHAR" property="universityNameAbbr" />
+    <result column="university_type" jdbcType="VARCHAR" property="universityType" />
+    <result column="rank_2005_2015" jdbcType="SMALLINT" property="rank20052015" />
+    <result column="rank_me" jdbcType="SMALLINT" property="rankMe" />
+    <result column="rank_2017" jdbcType="SMALLINT" property="rank2017" />
+    <result column="university_location" jdbcType="TINYINT" property="universityLocation" />
+    <result column="delete_flag" jdbcType="TINYINT" property="deleteFlag" />
   </resultMap>
 </mapper>

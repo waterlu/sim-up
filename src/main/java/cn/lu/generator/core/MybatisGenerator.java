@@ -27,10 +27,10 @@ public class MybatisGenerator {
     /**
      * 通用Mapper基类
      */
-    private final static String MAPPER_INTERFACE_UUID = "cn.zjhf.kingold.cloud.common.mapper.SingleTableMapper," +
-            "cn.zjhf.kingold.cloud.common.mapper.InsertUuidListMapper";
+    private final static String MAPPER_INTERFACE_UUID = "cn.lu.common.mybatis.SingleTableMapper," +
+            "cn.lu.common.mybatis.InsertUuidListMapper";
 
-    private final static String MAPPER_INTERFACE_ID = "cn.zjhf.kingold.cloud.common.mapper.SingleTableMapper,";
+    private final static String MAPPER_INTERFACE_ID = "cn.lu.common.mybatis.SingleTableMapper,";
 
     private MybatisShellCallback shellCallback = new MybatisShellCallback();
 
@@ -67,8 +67,7 @@ public class MybatisGenerator {
         PluginConfiguration pluginConfiguration = new PluginConfiguration();
 
         // 增加@Repository注解
-        pluginConfiguration.setConfigurationType("cn.zjhf.tool.quicker.core.MybatisMapperPlugin");
-//        pluginConfiguration.setConfigurationType("tk.mybatis.mapper.generator.MapperPlugin");
+        pluginConfiguration.setConfigurationType("cn.lu.generator.core.MybatisMapperPlugin");
 
         // 定义Mapper基类
         if (KeyType.KEY_TYPE_ID.equalsIgnoreCase(tableInfo.getKeyType())) {
