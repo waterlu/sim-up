@@ -1,9 +1,6 @@
 package cn.lu.cup.entity;
 
-import cn.lu.cup.common.util.RandomUtil;
-
-import java.util.ArrayList;
-import java.util.List;
+import cn.lu.common.util.RandomUtil;
 
 /**
  * @author lutiehua

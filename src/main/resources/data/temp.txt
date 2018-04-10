@@ -1,106 +1,165 @@
-1	北京大学
-2	复旦大学
-2	中国人民大学
-3	北京师范大学
-3	厦门大学
-3	中央财经大学
-3	上海财经大学
-3	对外经济贸易大学
-3	中国政法大学
-4	华东政法大学
-4	东北财经大学
-4	中国传媒大学
-4	中南财经政法大学
-4	西南财经大学
-4	吉林大学
-4	四川大学
-4	华东师范大学
-5	西南政法大学
-5	南京财经大学
-5	上海对外经贸大学
-5	华中师范大学
-5	天津财经大学
-5	首都经济贸易大学
-5	兰州大学
-5	暨南大学
-6	北京工商大学
-6	西北大学
-6	南京师范大学
-6	浙江工商大学
-6	首都师范大学
-6	东北师范大学
-6	江西财经大学
-6	陕西师范大学
-6	华南师范大学
-6	湖南师范大学
----------------
-2	南京大学
-2	中国科学技术大学
-3	南开大学
-3	西安交通大学
-3	中山大学
-3	武汉大学
-3	华中科技大学
-3	东南大学
-4	中南大学
-4	南京理工大学
-4	华东理工大学
-4	中国海洋大学
-4	重庆大学
-4	湖南大学
-4	大连理工大学
-4	山东大学
-5	西南交通大学
-5	深圳大学
-5	江南大学
-5	中国地质大学
-5	河海大学
-5	武汉理工大学
-5	苏州大学
-5	上海大学
-6	长安大学
-6	福州大学
-6	郑州大学
-6	上海理工大学
-6	云南大学
-6	西南大学
-6	安徽大学
-6	辽宁大学
-6	江苏大学
-6	汕头大学
----------------
-1	清华大学
-2	上海交通大学
-2	浙江大学
-3	北京航空航天大学
-3	同济大学
-3	哈尔滨工业大学
-3	天津大学
-3	北京理工大学
-3	北京邮电大学
-4	华南理工大学
-4	西安电子科技大学
-4	华北电力大学
-4	北京科技大学
-4	南京航空航天大学
-4	北京交通大学
-4	电子科技大学
-4	西北工业大学
-5	东北大学
-5	南京邮电大学
-5	大连海事大学
-5	中国石油大学
-5	东华大学
-5	哈尔滨工程大学
-5	北京化工大学
-5	北京工业大学
-6	合肥工业大学
-6	河北工业大学
-6	中国矿业大学
-6	浙江工业大学
-6	上海海事大学
-6	燕山大学
-6	北京建筑大学
-6	西安建筑科技大学
-6	太原理工大学
-6	南京工业大学
+*Aerospace
+*Chemical
+*Civil
+*Computer
+*Electrical
+*Electronic
+*Communications
+*Environmental
+*Materials
+*Mechanical
+Biomedical
+Manufacturing
+Petroleum
+
+Biological
+
+Transportation
+Optical
+Architecture
+Hydraulic
+
+
+Accounting
+Finance
+Management
+International Business
+Management Information Systems
+Marketing
+
+[Business]
+University of Pennsylvania
+Massachusetts Institute of Technology
+University of California--Berkeley
+University of Michigan--Ann Arbor
+New York University
+University of Texas--Austin
+Carnegie Mellon University
+Cornell University
+University of North Carolina--Chapel Hill
+University of Virginia
+
+
+
+
+
+
+
+
+
+[Engineering]
+Massachusetts Institute of Technology
+Stanford University
+University of California--Berkeley
+California Institute of Technology
+Georgia Institute of Technology
+University of Illinois--Urbana-Champaign
+University of Michigan--Ann Arbor
+Carnegie Mellon University
+Purdue University--West Lafayette
+Cornell University
+Princeton University
+University of Texas--Austin
+Northwestern University
+Johns Hopkins University
+Texas A&M University--College Station
+University of Wisconsin--Madison
+Virginia Tech
+Columbia University
+University of California--Los Angeles
+Duke University
+
+
+
+
+
+
+
+
+
+[US TOP]
+Princeton University
+Harvard University
+University of Chicago
+Yale University
+Columbia University
+Massachusetts Institute of Technology
+Stanford University
+University of Pennsylvania
+Duke University
+California Institute of Technology
+Dartmouth College
+Johns Hopkins University
+Northwestern University
+Brown University
+Cornell University
+Rice University
+Vanderbilt University
+University of Notre Dame
+Washington University in St. Louis
+Georgetown University
+Emory University
+University of California--Berkeley
+University of California--Los Angeles
+University of Southern California
+Carnegie Mellon University
+University of Virginia
+Wake Forest University
+University of Michigan--Ann Arbor
+Tufts University
+New York University
+University of North Carolina--Chapel Hill
+Boston College
+College of William and Mary
+Brandeis University
+Georgia Institute of Technology
+University of Rochester
+Boston University
+Case Western Reserve University
+University of California--Santa Barbara
+Northeastern University
+Tulane University
+Rensselaer Polytechnic Institute
+University of California--Irvine
+University of California--San Diego
+University of Florida
+Lehigh University
+Pepperdine University
+University of California--Davis
+University of Miami
+University of Wisconsin--Madison
+
+
+
+
+
+
+
+
+
+[UK TOP]
+California Institute of Technology
+Stanford University
+Massachusetts Institute of Technology
+Harvard University
+Princeton University
+University of Chicago
+Johns Hopkins University
+Yale University
+University of California--Berkeley
+Columbia University
+University of California--Los Angeles
+University of Pennsylvania
+Cornell University
+Duke University
+University of Michigan--Ann Arbor
+Carnegie Mellon University
+Northwestern University
+New York University
+Washington University in St. Louis
+*University of Illinois--Urbana-Champaign
+University of California--San Diego
+University of California--Santa Barbara
+Georgia Institute of Technology
+----
+University of California--Davis

@@ -1,6 +1,6 @@
 package cn.lu.cup.service.impl;
 
-import cn.lu.cup.common.util.RandomUtil;
+import cn.lu.common.util.RandomUtil;
 import cn.lu.cup.entity.Person;
 import cn.lu.cup.service.PersonService;
 import org.springframework.stereotype.Service;

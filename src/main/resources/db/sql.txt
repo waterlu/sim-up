@@ -303,7 +303,7 @@ DROP TABLE IF EXISTS `university_level`;
 CREATE TABLE `university_level` (
   `university_category` smallint(6) NOT NULL,
   `university_level` smallint(6) NOT NULL,
-  `university_code` char(5) NOT NULL
+  `university_code` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
