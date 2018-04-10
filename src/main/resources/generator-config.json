@@ -39,22 +39,9 @@
 	"tables":[
 		{
 			"type":"Single",
-			"name":"subject",
-			"key":"subject_id",
+			"name":"subject_level",
+			"key":"subject_level_id",
 			"keyType":"ID",
-			"query":[
-				"subject_code"
-			],
-			"remark":""
-		},
-		{
-			"type":"Single",
-			"name":"university",
-			"key":"university_id",
-			"keyType":"ID",
-			"query":[
-				"university_code"
-			],
 			"remark":""
 		}
 	]
