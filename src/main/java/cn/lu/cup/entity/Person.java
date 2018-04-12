@@ -65,6 +65,14 @@ public class Person {
 
     private Integer score4;
 
+    public Integer getCategory() {
+        return category;
+    }
+
+    public void setCategory(Integer category) {
+        this.category = category;
+    }
+
     /**
      *
      */

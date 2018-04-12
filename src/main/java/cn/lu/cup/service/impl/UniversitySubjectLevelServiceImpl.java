@@ -2,8 +2,11 @@ package cn.lu.cup.service.impl;
 
 import java.util.*;
 
+import cn.lu.common.util.RandUtil;
 import cn.lu.cup.entity.*;
 import cn.lu.cup.mapper.*;
+import cn.lu.cup.model.UniversitySubject;
+import cn.lu.cup.service.PersonService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,6 +52,146 @@ public class UniversitySubjectLevelServiceImpl implements UniversitySubjectLevel
 
     @Autowired
     private UniversitySubjectLevelMapper universitySubjectLevelMapper;
+
+    @Autowired
+    private PersonService personService;
+
+    @Override
+    public int enroll() throws BusinessException {
+        int [][] coefficient = new int[4][8];
+        List<UniversitySubjectLevel> levelList = universitySubjectLevelMapper.selectAll();
+        for (UniversitySubjectLevel usLevel : levelList) {
+            int category = usLevel.getCategory();
+            int level = usLevel.getLevel();
+            int number = usLevel.getNumber();
+            coefficient[category-1][level-1] += number;
+        }
+
+        int [][] rank = new int[4][8];
+        for (int i=0; i<coefficient.length; i++) {
+            for (int j=0; j<coefficient[i].length; j++) {
+                if (j == 0) {
+                    int number = (int)(coefficient[i][j] * 1.2);
+                    rank[i][j] = number;
+                } else {
+                    int number = (int)(coefficient[i][j] * 1.2);
+                    rank[i][j] = number + rank[i][j-1];
+                }
+            }
+        }
+
+        List<Person> [] personList = new ArrayList [4];
+        for (int i=0; i<personList.length; i++) {
+            personList[i] = new ArrayList<>();
+        }
+
+        List<Person> businessList = new ArrayList<>();
+        List<Person> literatureList = new ArrayList<>();
+        List<Person> scienceList = new ArrayList<>();
+        List<Person> engineerList = new ArrayList<>();
+
+        for (int i=0; i<50000; i++) {
+            Person person = personService.createRandom();
+            person.setName(String.format("E2021BJ%05d", i + 1));
+            person.exam();
+            personList[person.getCategory()-1].add(person);
+        }
+
+        int count = 0;
+        for (int i=0; i<personList.length; i++) {
+            List<UniversitySubjectLevel> list = new ArrayList<>();
+            for (UniversitySubjectLevel usLevel : levelList) {
+                if (usLevel.getCategory() == (i + 1)) {
+                    list.add(usLevel);
+                }
+            }
+            count += enrollCategory(personList[i], list, rank[i]);
+        }
+
+        return count;
+    }
+
+    private int enrollCategory(List<Person> personList, List<UniversitySubjectLevel> list, int [] rank) {
+        // 准备
+        Collections.sort(personList, (p1, p2) -> p2.getScore() - p1.getScore());
+        Collections.sort(list, (u1, u2) -> u1.getLevel() - u2.getLevel());
+
+        List<UniversitySubject> [] usList = new ArrayList [rank.length];
+        for (int i=0; i<usList.length; i++) {
+            usList[i] = new ArrayList<>();
+        }
+
+        for (UniversitySubjectLevel usLevel : list) {
+            int level = usLevel.getLevel();
+            UniversitySubject us = new UniversitySubject();
+            us.setUniversityCode(usLevel.getUniversityCode());
+            us.setSubjectCode(usLevel.getSubjectCode());
+            us.setLevel(level);
+            us.setNumber(usLevel.getNumber());
+            usList[level-1].add(us);
+        }
+
+        // 分配
+        int count = 0;
+        int pointer = 0;
+        int ranking = rank[pointer];
+        for (Person person : personList) {
+            count++;
+            if (count > ranking) {
+                pointer++;
+                if (pointer >= usList.length) {
+                    break;
+                }
+                ranking = rank[pointer];
+            }
+
+            int level = pointer;
+//            int levelRandom = RandUtil.getRandomNum(0, 100);
+//            if (levelRandom >= 90) {
+//                level = level - 1;
+//                if (level < 0) {
+//                    level = 0;
+//                }
+//            } else if (levelRandom < 10) {
+//                level = level + 1;
+//            }
+//
+//            if (level >= usList.length) {
+//                continue;
+//            }
+
+            List<UniversitySubject> candidate = usList[level];
+            int [] range = new int[candidate.size()];
+            for (int i=0; i<range.length; i++) {
+                if (i == 0) {
+                    range[i] = candidate.get(i).getNumber();
+                } else {
+                    range[i] = range[i-1] + candidate.get(i).getNumber();
+                }
+            }
+            int max = range[range.length-1];
+            int random = RandUtil.getRandomNum(0, max);
+            int select = 0;
+            for (int i=0; i<range.length; i++) {
+                if (random < range[i]) {
+                    select = i;
+                    break;
+                }
+            }
+            UniversitySubject object = candidate.get(select);
+            object.addPerson(person, count);
+        }
+
+        for (List<UniversitySubject> list1 : usList) {
+            for (UniversitySubject us : list1) {
+                if (us.getUniversityCode().equalsIgnoreCase("10001")) {
+                    logger.info(us.toString());
+                }
+            }
+        }
+
+        return count;
+    }
 
     @Override
     public int generateAll() throws BusinessException {
@@ -111,6 +254,11 @@ public class UniversitySubjectLevelServiceImpl implements UniversitySubjectLevel
         }
 
         return row;
+    }
+
+    @Override
+    public List<UniversitySubjectLevel> selectAll() throws BusinessException {
+        return universitySubjectLevelMapper.selectAll();
     }
 
     /**

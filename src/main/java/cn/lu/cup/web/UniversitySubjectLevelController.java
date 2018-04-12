@@ -41,6 +41,15 @@ public class UniversitySubjectLevelController {
     @Autowired
     private UniversitySubjectLevelService universitySubjectLevelService;
 
+    @PostMapping(value = "/enroll")
+    public ResponseResult enroll() throws BusinessException {
+        int row = universitySubjectLevelService.enroll();
+
+        ResponseResult responseResult = new ResponseResult();
+        responseResult.setData(row);
+        return responseResult;
+    }
+
     @PostMapping(value = "/generate")
     public ResponseResult generateAll() throws BusinessException {
         int row = universitySubjectLevelService.generateAll();

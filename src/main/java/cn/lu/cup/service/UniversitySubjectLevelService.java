@@ -19,7 +19,11 @@ import cn.lu.cup.entity.UniversitySubjectLevel;
  */
 public interface UniversitySubjectLevelService {
 
+    int enroll() throws BusinessException;
+
     int generateAll() throws BusinessException;
+
+    List<UniversitySubjectLevel> selectAll() throws BusinessException;
 
     /**
      * 持久化到数据库
